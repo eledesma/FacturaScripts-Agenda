@@ -1,10 +1,10 @@
 {include="header"}
 
-
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation"><a href="{$fsc->url()}"<><span class="glyphicon glyphicon-refresh" aria-hidden="true"></a></li>
-    <li role="presentation" {if condition="!$fsc->editar"} class="active" {/if}><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Listado</a></li>
+    <li role="presentation" {if condition="!$fsc->editar"} class="active" {/if}><a href="#home" aria-controls="home" 
+    role="tab" data-toggle="tab">Listado</a></li>
     <li role="presentation" ><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Nueva tarea</a></li>
    {if condition="$fsc->editar"}
     <li role="presentation"  class="active"><a href="#editar" aria-controls="editar" role="tab" data-toggle="tab">Editar</a></li>
@@ -49,7 +49,8 @@
                   <div class="col-md-4">
                   <div class="form-group">
                       Fecha:
-                      <input type="text" name="fecha" value="{$fsc->today()}" class="form-control datepicker"/>                  </div>
+                      <input type="text" name="fecha" value="{$fsc->today()}" class="form-control datepicker"/>                  
+                  </div>
                   </div>
                    <div class="col-md-4">
                   <div class="form-group">
@@ -110,7 +111,8 @@
                       <select name="usuario" class="form-control">
                           <option value="todos">Todos</option>
                           {loop="$fsc->user->all()"}
-                          <option value="{$value->nick}" {if condition="$value->nick==$fsc->editar->usuario"} selected="selected"{/if}>{$value->nick}</option>
+                          <option value="{$value->nick}" {if condition="$value->nick==$fsc->editar->usuario"} 
+                          selected="selected"{/if}>{$value->nick}</option>
                           {/loop}
                       </select>
                   </div>
@@ -123,12 +125,11 @@
                   </div>
                       <div class="checkbox">
                           <label>
-                              <input type="checkbox" name="completado" value="TRUE" {if condition="$fsc->editar->completado"} checked="checked"{/if}></input>
+                              <input type="checkbox" name="completado" value="TRUE" {if condition="$fsc->editar->completado"} 
+                              checked="checked"{/if}></input>
                               Tarea Completada
                           </label>
-
                       </div>
-
                       <div class="text-right">
                           <a href="{$fsc->url()}&delete={$fsc->editar->id}" class="btn btn-sm btn-danger">
                               <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
