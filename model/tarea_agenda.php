@@ -1,6 +1,5 @@
 <?php
 
-
 class tarea_agenda extends fs_model
 {
    public $id;
@@ -59,9 +58,7 @@ public function __construct($t = FALSE)
            return $this->db->select("SELECT * FROM agenda WHERE id = ".$this->var2str($this->id).';');
    }
 
-
-
-     public function save() {
+   public function save() {
 
          if ($this->exists()){
 
@@ -86,23 +83,22 @@ public function __construct($t = FALSE)
 
     if ($this->db->exec($sql))
 
-    {
+      {
          return TRUE;
-    }
- else
+      }
+   else
     {
         return FALSE;
     }
-
          }
       }
 
-     public function delete() {
+   public function delete() {
          return $this->db->exec("DELETE FROM agenda WHERE id = "
                  .$this->var2str($this->id).";");
      }
 
-     public function all() {
+   public function all() {
 
          $lista = array();
 
@@ -118,8 +114,7 @@ public function __construct($t = FALSE)
          }
      }
 
-
-      public function separa_fecha()
+  public function separa_fecha()
     {
         $data = explode(' ', $this->fecha);
         return $data=Date('d-m-Y', strtotime($data[0]));
@@ -130,5 +125,4 @@ public function __construct($t = FALSE)
         $data = explode(' ',$this->fecha);
         return $data[1];
     }
-
 }
