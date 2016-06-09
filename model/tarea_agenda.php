@@ -1,16 +1,6 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- * Description of tarea_agenda
- *
- * @author Administrador
- */
 class tarea_agenda extends fs_model
 {
    public $id;
@@ -97,7 +87,6 @@ public function __construct($t = FALSE)
     if ($this->db->exec($sql))
 
     {
-        /// $this->id = $this->db->lastval();
          return TRUE;
     }
  else
